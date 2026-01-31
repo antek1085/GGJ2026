@@ -1,26 +1,51 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using UnityEngine.VFX;
 
 public class FireStarterScript : MonoBehaviour
 {
-    private List <GameObject> fireStarterList;
+    private List <VisualEffect> fireStarterList = new List<VisualEffect>();
+    public bool isOnFire = false;
+    public Rigidbody rockRigidBody;
+    
     private void Awake()
     {
-        for (int i = 0; i < gameObject.transform.childCount -1; i++)
+        for (int i = 0; i < gameObject.transform.childCount; i++)
         {
-            fireStarterList.Add(gameObject.transform.GetChild(i).gameObject);
+            if(gameObject.transform.GetChild(i).gameObject.TryGetComponent<VisualEffect>(out VisualEffect vfx))
+                fireStarterList.Add(vfx);
+        }
+    }
+    
+
+    public IEnumerator StartFire(int i)
+    {
+        if (fireStarterList.Count != i)
+        {
+            fireStarterList[i].enabled = true;
+            yield return new WaitForSeconds(0.5f);
+            StartCoroutine(StartFire(i + 1));   
+        }
+        else
+        {
+            AllFiresLightUp();
+            StopAllCoroutines();
         }
     }
 
-    void Start()
+    void AllFiresLightUp()
     {
-        
+        rockRigidBody.useGravity = true;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter(Collider other)
     {
-        
+        if (other.gameObject.CompareTag("FireTorch") && !isOnFire)
+        {
+            StartCoroutine(StartFire(0));
+        }
     }
 }
