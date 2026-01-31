@@ -6206,7 +6206,7 @@ MonoBehaviour:
   m_SmoothRotation: 1
   m_SmoothRotationAmount: 8
   m_TightenRotation: 0.3
-  m_TrackScale: 1
+  m_TrackScale: 0
   m_SmoothScale: 0
   m_SmoothScaleAmount: 8
   m_TightenScale: 0.1
@@ -6261,7 +6261,7 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 62
@@ -6370,13 +6370,13 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 120
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 119
+    m_Bits: 375
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 8400000, guid: c16f6db040cc5ac4795a8eb31124d429, type: 2}
   m_TargetDisplay: 0
@@ -6397,11 +6397,11 @@ Transform:
   m_GameObject: {fileID: 1009668612}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.397}
+  m_LocalScale: {x: 2.8408241, y: 2.8408241, z: 2.8408241}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 9014170783777442264}
+  m_Father: {fileID: 1932688690}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1019880141
 GameObject:
@@ -7304,7 +7304,7 @@ MonoBehaviour:
   reflectionMask:
     serializedVersion: 2
     m_Bits: 256
-  rigidBody: {fileID: 0}
+  rigidBody: {fileID: 1002772870}
 --- !u!120 &1327235874
 LineRenderer:
   serializedVersion: 3
@@ -10759,9 +10759,16 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 6170405482284720350, guid: cb0bf42be4de95e46b83fea48c248dda, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 7e19d2c480ad85b48875969c7e9a1721, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 5037984013817207729, guid: cb0bf42be4de95e46b83fea48c248dda, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1009668616}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 5665901513375711499, guid: cb0bf42be4de95e46b83fea48c248dda, type: 3}
       insertIndex: -1
@@ -10862,7 +10869,7 @@ MonoBehaviour:
   m_ParentInteractableObject: {fileID: 0}
   m_AttachTransform: {fileID: 0}
   m_SecondaryAttachTransform: {fileID: 0}
-  m_UseDynamicAttach: 0
+  m_UseDynamicAttach: 1
   m_MatchAttachPosition: 1
   m_MatchAttachRotation: 1
   m_SnapToColliderVolume: 1
@@ -16079,9 +16086,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1767192434, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2181405618988545912}
-    - targetCorrespondingSourceObject: {fileID: 1767192434, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1009668616}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1767192433, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       insertIndex: -1
