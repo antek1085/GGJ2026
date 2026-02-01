@@ -10,6 +10,9 @@ public class itemPedestal : MonoBehaviour
 
     [SerializeField] int itemIDNeeded;
     public static int placedright;
+    
+    [SerializeField] GameObject itemPrefab;
+    [SerializeField] Transform spawnPoint;
 
     int itemId;
     
@@ -42,7 +45,7 @@ public class itemPedestal : MonoBehaviour
 
     void OnAllItemPlaced()
     {
-        
+        Instantiate(itemPrefab, spawnPoint.position, Quaternion.identity);
     }
     
 }
