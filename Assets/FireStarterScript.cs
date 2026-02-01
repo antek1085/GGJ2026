@@ -7,7 +7,7 @@ using UnityEngine.VFX;
 
 public class FireStarterScript : MonoBehaviour
 {
-    private List <VisualEffect> fireStarterList = new List<VisualEffect>();
+    private List <GameObject> fireStarterList = new List<GameObject>();
     public bool isOnFire = false;
     public Rigidbody rockRigidBody;
     
@@ -15,9 +15,13 @@ public class FireStarterScript : MonoBehaviour
     {
         for (int i = 0; i < gameObject.transform.childCount; i++)
         {
-            if(gameObject.transform.GetChild(i).gameObject.TryGetComponent<VisualEffect>(out VisualEffect vfx))
-                fireStarterList.Add(vfx);
+                fireStarterList.Add(gameObject.transform.GetChild(i).gameObject);
         }
+    }
+
+    void Start()
+    {
+        StartCoroutine(StartFire(0));
     }
     
 
@@ -25,7 +29,7 @@ public class FireStarterScript : MonoBehaviour
     {
         if (fireStarterList.Count != i)
         {
-            fireStarterList[i].enabled = true;
+            fireStarterList[i].SetActive(true);
             yield return new WaitForSeconds(0.5f);
             StartCoroutine(StartFire(i + 1));   
         }
@@ -38,7 +42,7 @@ public class FireStarterScript : MonoBehaviour
 
     void AllFiresLightUp()
     {
-        rockRigidBody.useGravity = true;
+        /*rockRigidBody.useGravity = true;*/
     }
 
     private void OnTriggerEnter(Collider other)
