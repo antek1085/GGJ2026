@@ -42,7 +42,7 @@ public class FireStarterScript : MonoBehaviour
 
     void AllFiresLightUp()
     {
-        /*rockRigidBody.useGravity = true;*/
+        rockRigidBody.GetComponent<BigRock>().StartRolling();
     }
 
     private void OnTriggerEnter(Collider other)
