@@ -18,13 +18,8 @@ public class FireStarterScript : MonoBehaviour
                 fireStarterList.Add(gameObject.transform.GetChild(i).gameObject);
         }
     }
-
-    void Start()
-    {
-        StartCoroutine(StartFire(0));
-    }
     
-
+    
     public IEnumerator StartFire(int i)
     {
         if (fireStarterList.Count != i)

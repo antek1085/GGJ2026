@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Rat : MonoBehaviour
 {
-    public int numberOfRats;
+    static int numberOfRats;
     [SerializeField] GameObject prefab;
     [SerializeField] Transform spawnPoint;
 
@@ -14,7 +14,7 @@ public class Rat : MonoBehaviour
     public void OnHitRat()
     {
         numberOfRats -= 1;
-        if (numberOfRats <= 0)
+        if (numberOfRats < 0)
         {
             Instantiate(prefab, transform.position, Quaternion.identity);
         }
