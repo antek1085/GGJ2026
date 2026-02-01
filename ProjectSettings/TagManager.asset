@@ -8,6 +8,7 @@ TagManager:
   - Reflection
   - ItemPedestal
   - Rat
+  - Door
   layers:
   - Default
   - TransparentFX
