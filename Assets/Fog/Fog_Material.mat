@@ -50,7 +50,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _FogNoise:
         m_Texture: {fileID: 11700000, guid: 6eb16d569e368bf49bf46f4a55d6ac6e, type: 3}
-        m_Scale: {x: 1, y: 1}
+        m_Scale: {x: 3.1, y: 1}
         m_Offset: {x: 1, y: 1}
     - _MainTex:
         m_Texture: {fileID: 0}
@@ -96,8 +96,8 @@ Material:
     - _ClearCoatSmoothness: 0
     - _Cull: 2
     - _Cutoff: 0.5
-    - _DensityMultiplier: 0.21
-    - _DensityThreshold: 0.707
+    - _DensityMultiplier: 0.05
+    - _DensityThreshold: 0.669
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
@@ -106,11 +106,11 @@ Material:
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
-    - _LightScattering: 0
-    - _MaxDistance: 14.94
+    - _LightScattering: 0.135
+    - _MaxDistance: 11.4
     - _Metallic: 0
-    - _NoiseOffset: 0.2
-    - _NoiseTiling: 40
+    - _NoiseOffset: -7.4
+    - _NoiseTiling: 39.48
     - _OcclusionStrength: 1
     - _Parallax: 0.005
     - _QueueOffset: 0
@@ -120,13 +120,13 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _SrcBlendAlpha: 1
-    - _StepSize: 0.1
+    - _StepSize: 2.1
     - _Surface: 0
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Color: {r: 0.09945709, g: 0.14150941, b: 0.10328002, a: 1}
+    - _Color: {r: 0.12164145, g: 0.11593563, b: 0.17520213, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _LightContribution: {r: 766.99615, g: 766.99615, b: 766.99615, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
