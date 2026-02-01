@@ -42,7 +42,11 @@ public class Reflection : MonoBehaviour
             if(hit.transform.TryGetComponent(typeof(Reflection), out var reflection))
             {
                 reflection.GetComponent<Reflection>().HitByFire(hit.point,destination);
-            } 
+            }
+            if (hit.collider.TryGetComponent(typeof(ReflectionPoint), out var reflectionEnd))
+            {
+                reflectionEnd.GetComponent<ReflectionPoint>().OnHit();
+            }
             lineRenderer.SetPosition(1, hit.point);
         }
         

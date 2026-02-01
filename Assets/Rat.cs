@@ -1,21 +1,23 @@
+using System;
 using UnityEngine;
 
 public class Rat : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public int numberOfRats;
+    [SerializeField] GameObject prefab;
+    [SerializeField] Transform spawnPoint;
+
     void Start()
     {
-        
+        numberOfRats += 1;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void OnHitRat()
     {
-        
+        numberOfRats -= 1;
+        if (numberOfRats <= 0)
+        {
+            Instantiate(prefab, transform.position, Quaternion.identity);
+        }
+        Destroy(gameObject);
     }
 }
